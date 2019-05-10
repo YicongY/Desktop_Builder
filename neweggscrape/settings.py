@@ -64,7 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 }
 
-PROXY_LIST = '/home/able/Desktop/Desktop_Builder/Newegg-Crawler/neweggscrape/proxy.txt'
+PROXY_LIST = '/home/able/Desktop/Desktop_Builder/neweggscrape/proxy.txt'
 PROXY_MODE = 0
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
