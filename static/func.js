@@ -38,8 +38,203 @@ function firstsubmit() {
         }
     };
 }
-
 function secondsubmit() {
+    let budget = document.getElementById('Budget').value;
+    let purpose = document.getElementById('Purpose').value;
+    console.log(budget);
+    console.log(purpose);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:1111/first", true);
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    let sendText = JSON.parse('{ "budget":"", "purpose":"" }');
+    sendText.budget = budget;
+    sendText.purpose = purpose;
+    console.log(sendText);
+    xhr.send(JSON.stringify(sendText));
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+                let data = JSON.parse(xhr.responseText).url;
+                console.log(data);
+                document.cookie = data.join('|');
+
+                var list = document.createElement('ul');
+                for(var i = 0; i < data.length; i++) {
+                    var aTag = document.createElement('div');
+                    var item = document.createElement('a');
+                    item.appendChild(document.createTextNode(data[i]));
+                    item.href = data[i];
+                    aTag.appendChild(item);
+                    list.appendChild(aTag);
+                }
+                document.getElementById("outText2").appendChild(list);
+                xhr.abort();
+            } else {
+                console.error(xhr.statusText);
+                xhr.abort();
+            }
+        }
+    };
+}
+function thirdsubmit() {
+    let budget = document.getElementById('Budget').value;
+    let purpose = document.getElementById('Purpose').value;
+    console.log(budget);
+    console.log(purpose);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:1111/first", true);
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    let sendText = JSON.parse('{ "budget":"", "purpose":"" }');
+    sendText.budget = budget;
+    sendText.purpose = purpose;
+    console.log(sendText);
+    xhr.send(JSON.stringify(sendText));
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+                let data = JSON.parse(xhr.responseText).url;
+                console.log(data);
+                document.cookie = data.join('|');
+
+                var list = document.createElement('ul');
+                for(var i = 0; i < data.length; i++) {
+                    var aTag = document.createElement('div');
+                    var item = document.createElement('a');
+                    item.appendChild(document.createTextNode(data[i]));
+                    item.href = data[i];
+                    aTag.appendChild(item);
+                    list.appendChild(aTag);
+                }
+                document.getElementById("outText3").appendChild(list);
+                xhr.abort();
+            } else {
+                console.error(xhr.statusText);
+                xhr.abort();
+            }
+        }
+    };
+}
+function forthsubmit() {
+    let budget = document.getElementById('Budget').value;
+    let purpose = document.getElementById('Purpose').value;
+    console.log(budget);
+    console.log(purpose);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:1111/first", true);
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    let sendText = JSON.parse('{ "budget":"", "purpose":"" }');
+    sendText.budget = budget;
+    sendText.purpose = purpose;
+    console.log(sendText);
+    xhr.send(JSON.stringify(sendText));
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+                let data = JSON.parse(xhr.responseText).url;
+                console.log(data);
+                document.cookie = data.join('|');
+
+                var list = document.createElement('ul');
+                for(var i = 0; i < data.length; i++) {
+                    var aTag = document.createElement('div');
+                    var item = document.createElement('a');
+                    item.appendChild(document.createTextNode(data[i]));
+                    item.href = data[i];
+                    aTag.appendChild(item);
+                    list.appendChild(aTag);
+                }
+                document.getElementById("outText4").appendChild(list);
+                xhr.abort();
+            } else {
+                console.error(xhr.statusText);
+                xhr.abort();
+            }
+        }
+    };
+}
+function fifthsubmit() {
+    let budget = document.getElementById('Budget').value;
+    let purpose = document.getElementById('Purpose').value;
+    console.log(budget);
+    console.log(purpose);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:1111/first", true);
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    let sendText = JSON.parse('{ "budget":"", "purpose":"" }');
+    sendText.budget = budget;
+    sendText.purpose = purpose;
+    console.log(sendText);
+    xhr.send(JSON.stringify(sendText));
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+                let data = JSON.parse(xhr.responseText).url;
+                console.log(data);
+                document.cookie = data.join('|');
+
+                var list = document.createElement('ul');
+                for(var i = 0; i < data.length; i++) {
+                    var aTag = document.createElement('div');
+                    var item = document.createElement('a');
+                    item.appendChild(document.createTextNode(data[i]));
+                    item.href = data[i];
+                    aTag.appendChild(item);
+                    list.appendChild(aTag);
+                }
+                document.getElementById("outText5").appendChild(list);
+                xhr.abort();
+            } else {
+                console.error(xhr.statusText);
+                xhr.abort();
+            }
+        }
+    };
+}
+function sixthsubmit() {
+    let budget = document.getElementById('Budget').value;
+    let purpose = document.getElementById('Purpose').value;
+    console.log(budget);
+    console.log(purpose);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:1111/first", true);
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    let sendText = JSON.parse('{ "budget":"", "purpose":"" }');
+    sendText.budget = budget;
+    sendText.purpose = purpose;
+    console.log(sendText);
+    xhr.send(JSON.stringify(sendText));
+    xhr.onload = function (e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+                let data = JSON.parse(xhr.responseText).url;
+                console.log(data);
+                document.cookie = data.join('|');
+
+                var list = document.createElement('ul');
+                for(var i = 0; i < data.length; i++) {
+                    var aTag = document.createElement('div');
+                    var item = document.createElement('a');
+                    item.appendChild(document.createTextNode(data[i]));
+                    item.href = data[i];
+                    aTag.appendChild(item);
+                    list.appendChild(aTag);
+                }
+                document.getElementById("outText6").appendChild(list);
+                xhr.abort();
+            } else {
+                console.error(xhr.statusText);
+                xhr.abort();
+            }
+        }
+    };
+}
+
+function seventhsubmit() {
     let cpu_choice = parseInt(document.getElementById('cpu_select').value,10);
     console.log(cpu_choice);
     let xhr = new XMLHttpRequest();
@@ -71,7 +266,7 @@ function secondsubmit() {
                   aTag.appendChild(item);
                   list.appendChild(aTag);
               }
-              document.getElementById("outText").appendChild(list);
+              document.getElementById("outText7").appendChild(list);
               xhr.abort();
             } else {
               console.error(xhr.statusText);

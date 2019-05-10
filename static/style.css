@@ -48,7 +48,7 @@ html, body {
 }
 .input_textFrame {
     position: relative;
-    top: 7vw;
+    top: 6vw;
     left: 60vw;
     width: 7vw;
     height: 5vh;
@@ -62,7 +62,7 @@ html, body {
     position: relative;
     height: 5vh;
     top: 10vh;
-    left: 58vw;
+    left: 61vw;
     width: 5vw;
     margin: 0;
     padding: 0;
@@ -75,7 +75,7 @@ html, body {
     position: relative;
     height: 5vh;
     top: 3vh;
-    left: 48vw;
+    left: 51vw;
     width: 5vw;
     margin: 0;
     padding: 0;
@@ -181,8 +181,8 @@ html, body {
 
 .comp_selector {
     position: relative;
-    top: 0vh;
-    left: 120vh;
+    top: 3vh;
+    left: 130vh;
     width: 5vw;
     height: 5vh;
 }
@@ -191,7 +191,7 @@ html, body {
     position: relative;
     height: 4vh;
     top:  -5vh;
-    left: 10vw;
+    left: 12vw;
     width: 5vw;
     margin: 0;
     padding: 0;
@@ -280,6 +280,12 @@ html, body {
     font-size: 2.5vmin;
 }
 
+.url{
+    position: relative;
+    height: 5vh;
+    top: 0vh;
+    left: 10vw;
+}
 .textInput {
     position: absolute;
     top: 10vh;
@@ -304,7 +310,7 @@ html, body {
 .button {
     position: absolute;
     top: 2vh;
-    right: -25vw;
+    right: -20vw;
     height: 5vh;
     line-height: 5vh;
     text-align: center;

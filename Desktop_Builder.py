@@ -132,17 +132,22 @@ class Desktop_Builder(object):
             min_budget_money = self.money * (self.budget.budget['board'] - 0.01)
             max_budget_money = self.money * (self.budget.budget['board'] + 0.01)
             board_type = option_para['board_type']
-
+            print(1)
             if board_type == 'intel':
-                self.cursor.execute("""SELECT id, rate, url FROM intelboard WHERE price between %s and %s and socket = %s """, [min_budget_money, max_budget_money, option_para['socket']])
+                print(1)
+                self.cursor.execute("""SELECT id, rate, url FROM intelboard WHERE price between %s and %s""", [min_budget_money, max_budget_money])
             elif board_type == 'amd':
-                self.cursor.execute("""SELECT id, rate, url FROM amdboard WHERE price between %s and %s and socket = %s """, [min_budget_money, max_budget_money, option_para['socket']])
+                self.cursor.execute("""SELECT id, rate, url FROM amdboard WHERE price between %s and %s """, [min_budget_money, max_budget_money])
             checkmodel = self.cursor.fetchall()
+            print(checkmodel)
             reviews = []
             line_to_boardid = {}
             id_to_rating = {}
             id_to_url = {}
+            print(1)
+
             for i in checkmodel:
+                print(1)
                 id = i[0]
                 id_to_url[id] = i[2]
                 tmp = ''
@@ -159,7 +164,7 @@ class Desktop_Builder(object):
                     id_to_rating[id] = round(average_rating/len(check_review),2)
                 else:
                     id_to_rating[id] = 0
-
+                print(tmp)
                 reviews.append(tmp)
             for index, val in enumerate(checkmodel):
                 line_to_boardid[index] = val[0]
@@ -432,21 +437,20 @@ class Desktop_Builder(object):
                 print("the list you want", return_url)
                 return return_url
 
-#if __name__ == '__main__':
-    # para = {}
-    # para['money'] = 1000
-    # para['purpose'] = 'basic'
-    #
-    # builder = Desktop_Builder(para)
-    # option_para = {}
-    # #builder.recommender('cpu', 'fast',option_para)
-    #
-    # option_para['board_type'] = 'intel'
-    # option_para['socket'] = '775'
-    # #builder.recommender('motherboard', 'fast',option_para)
-    # #builder.recommender('gpu', 'low power',option_para)
-    # option_para['case_color'] = 'black'
-    # #builder.recommender('case', 'cool',option_para)
-    # option_para['ram_rgb'] = 'No'
-    # builder.recommender('ram', 'fast',option_para)
-    # builder.recommender('hdd', 'large', option_para)
+if __name__ == '__main__':
+    para = {}
+    para['money'] = 1000
+    para['purpose'] = 'gaming'
+
+    builder = Desktop_Builder(para)
+    option_para = {}
+    #builder.recommender('cpu', 'fast',option_para)
+
+    option_para['board_type'] = 'intel'
+    #builder.recommender('motherboard', 'fast',option_para)
+    builder.recommender('gpu', 'low power consumption',option_para)
+    option_para['case_color'] = 'black'
+    #builder.recommender('case', 'cool',option_para)
+    option_para['ram_rgb'] = 'No'
+    #builder.recommender('ram', 'fast',option_para)
+    #builder.recommender('hdd', 'large', option_para)
