@@ -13,30 +13,140 @@
         <div class = "title">
             <b class = "remine">Desktop Builder</b>
         </div>
-
-        <div class = "input">
-
-            <div class = "intro">
+        <div class = "intro">
                 <p id = "intro_title" class = "intro_title"></p>
-                <p class = "intro_para">This is a demo of novel open IE system—ReMine. It integrates local context signal and global structural signal in a unified framework with distant supervision. The input is corpus. The outputs will return relation tuples. Experiments on two real-world corpora of different domains demonstrate that ReMine system achieves superior precision when outputting same number of extractions, compared with several state-of-the-art open IE systems.</p>
-            </div>
-
+                <p class = "intro_para">To build your personal desktop, you have to follow our work flow by selecting cpu first from our recommendation becasue different cpu brand have different cpu board. And you can choose the rest of the components step by step.</p>
+        </div>
+        <div class = "input">
             <div class = "selector">
-                <a class = "select">Pick a sample here!</a>
-                <select id = "selection" class = "select">
-                    <option value = "s1">sample 1</option>
-                    <option value = "s2">sample 2</option>
-                    <option value = "s3">sample 3</option>
+                <a class = "select">Purpose:</a>
+                <select id = "Purpose" class = "select">
+                    <option value = "basic">Basic</option>
+                    <option value = "gaming">Gaming</option>
+                    <option value = "working">Working</option>
                 </select>
+                
+                <a class = "button" onclick="firstsubmit()">Begin to build</a>
             </div>
-
+            <a class = "input_name">CPU Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "input_textFrame"></textarea>
             <div class = "textInput">
-                <textarea id = "inText" type = "text" name = "corpus" class = "textFrame"></textarea>
-                <a class = "button" onclick="submitCorpus()">Run the Model</a>
+                <a class = "textletter">Budget:</a>
+                <textarea id = "Budget" type = "text" name = "corpus" class = "textFrame"></textarea>
             </div>
 
         </div>
-
+        <div class = "comp">
+            
+            <a class = "comp_output_name">CPU Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">MB Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">CPU Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">MB Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">GPU Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">MotherBoard Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">GPU Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">PSU Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">GPU Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">PSU Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">Ram Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">PSU Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">Ram Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">HDD Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">Ram Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">HDD Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            <a class = "comp_input_name">Case Requirement:</a>
+                <textarea id = "cputext" type = "text" name = "corpus" class = "comp_textFrame"></textarea>
+            <div class = "comp_selector">
+                <a class = "comp_select">HDD Link:</a>
+                <select id = "cpu_select" class = "comp_select">
+                    <option value = "0">1</option>
+                    <option value = "1">2</option>
+                    <option value = "2">3</option>
+                </select>
+                <a class = "comp_submit_button" onclick="secondsubmit()">Next</a>
+            </div>
+            
+        </div>
+        <div class = "comp">
+            
+            <a class = "comp_output_name">Case Output List:</a>
+            <div id = "outText" type = "text" class = "comp_output"></div>
+            
+            </div>
+            
+        </div>
+        
 
     </body>
 

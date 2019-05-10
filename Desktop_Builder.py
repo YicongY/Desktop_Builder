@@ -18,7 +18,8 @@ from budget import basic_budget, gaming_budget, working_budget
 class Desktop_Builder(object):
 
     def __init__(self,para):
-        self.money = para['money']
+        self.para = para
+        self.money = int(para['money'])
         self.ram_size = {'basic': ['8'], 'gaming': ['16', '32'], 'working':['16', '32']}
         self.hdd_size = {'basic': ['1'], 'gaming': ['1', '2'], 'working':['1', '2']}
         if para['purpose'] == 'basic':
@@ -92,7 +93,6 @@ class Desktop_Builder(object):
                 for rev in check_review:
                     tmp += rev[0]
                     average_rating += int(rev[1])
-                print(tmp)
                 if len(check_review) > 0:
                     id_to_rating[id] = round(average_rating/len(check_review),2)
                 else:
@@ -117,12 +117,14 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
 
         elif components == 'motherboard':
             budget_money = self.money * self.budget.budget['board']
@@ -175,12 +177,14 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
 
         elif components == 'gpu':
             budget_money = self.money * self.budget.budget['gpu']
@@ -230,12 +234,14 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
 
         elif components == 'case':
             budget_money = self.money * self.budget.budget['case']
@@ -289,27 +295,29 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
 
         elif components == 'ram':
             budget_money = self.money * self.budget.budget['ram']
 
             min_budget_money = self.money * (self.budget.budget['ram'] - 0.05)
             max_budget_money = self.money * (self.budget.budget['ram'] + 0.05)
-            if len(self.ram_size[para['purpose']]) > 1 and 'ram_rgb' in option_para:
+            if len(self.ram_size[self.para['purpose']]) > 1 and 'ram_rgb' in option_para:
 
-                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity between %s and %s and led = %s""", [min_budget_money, max_budget_money, self.ram_size[para['purpose']][0],self.ram_size[para['purpose']][1], option_para['ram_rgb']])
-            elif len(self.ram_size[para['purpose']]) <= 1 and 'ram_rgb' in option_para:
-                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity = %s and led = %s""", [min_budget_money, max_budget_money, self.ram_size[para['purpose']][0], option_para['ram_rgb']])
-            elif len(self.ram_size[para['purpose']]) <= 1 and 'ram_rgb' not in option_para:
-                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity = %s""", [min_budget_money, max_budget_money, self.ram_size[para['purpose']][0]])
-            elif len(self.ram_size[para['purpose']]) > 1 and 'ram_rgb' not in option_para:
-                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity between %s and %s""", [min_budget_money, max_budget_money, self.ram_size[para['purpose']][0],self.ram_size[para['purpose']][1]])
+                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity between %s and %s and led = %s""", [min_budget_money, max_budget_money, self.ram_size[self.para['purpose']][0],self.ram_size[self.para['purpose']][1], option_para['ram_rgb']])
+            elif len(self.ram_size[self.para['purpose']]) <= 1 and 'ram_rgb' in option_para:
+                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity = %s and led = %s""", [min_budget_money, max_budget_money, self.ram_size[self.para['purpose']][0], option_para['ram_rgb']])
+            elif len(self.ram_size[self.para['purpose']]) <= 1 and 'ram_rgb' not in option_para:
+                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity = %s""", [min_budget_money, max_budget_money, self.ram_size[self.para['purpose']][0]])
+            elif len(self.ram_size[self.para['purpose']]) > 1 and 'ram_rgb' not in option_para:
+                self.cursor.execute("""SELECT id, rate, brand, url FROM ram WHERE price between %s and %s and capacity between %s and %s""", [min_budget_money, max_budget_money, self.ram_size[self.para['purpose']][0],self.ram_size[self.para['purpose']][1]])
 
             checkmodel = self.cursor.fetchall()
             reviews = []
@@ -354,13 +362,14 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
-
+                return return_url
         elif components == 'hdd':
             budget_money = self.money * self.budget.budget['hdd']
 
@@ -414,28 +423,30 @@ class Desktop_Builder(object):
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
             else:
                 return_id = self.cal_final_core(0.3, tf_results, id_to_rating, line_to_boardid)
                 return_url = []
                 for u in return_id:
                     return_url.append(id_to_url[u])
                 print("the list you want", return_url)
+                return return_url
 
-if __name__ == '__main__':
-    para = {}
-    para['money'] = 1000
-    para['purpose'] = 'basic'
-
-    builder = Desktop_Builder(para)
-    option_para = {}
-    #builder.recommender('cpu', 'fast',option_para)
-
-    option_para['board_type'] = 'intel'
-    option_para['socket'] = '775'
-    #builder.recommender('motherboard', 'fast',option_para)
-    #builder.recommender('gpu', 'low power',option_para)
-    option_para['case_color'] = 'black'
-    #builder.recommender('case', 'cool',option_para)
-    option_para['ram_rgb'] = 'No'
-    builder.recommender('ram', 'fast',option_para)
-    builder.recommender('hdd', 'large', option_para)
+#if __name__ == '__main__':
+    # para = {}
+    # para['money'] = 1000
+    # para['purpose'] = 'basic'
+    #
+    # builder = Desktop_Builder(para)
+    # option_para = {}
+    # #builder.recommender('cpu', 'fast',option_para)
+    #
+    # option_para['board_type'] = 'intel'
+    # option_para['socket'] = '775'
+    # #builder.recommender('motherboard', 'fast',option_para)
+    # #builder.recommender('gpu', 'low power',option_para)
+    # option_para['case_color'] = 'black'
+    # #builder.recommender('case', 'cool',option_para)
+    # option_para['ram_rgb'] = 'No'
+    # builder.recommender('ram', 'fast',option_para)
+    # builder.recommender('hdd', 'large', option_para)

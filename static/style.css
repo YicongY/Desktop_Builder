@@ -39,25 +39,203 @@ html, body {
 }
 
 .input {
-    position: absolute;
+    position: relative;
     top: 10vh;
     left: 0;
-    width: 50vw;
-    height: 90vh;
+    width: 110vw;
+    height: 10vh;
     border-right: 0.1px solid #D9D9D9;
+}
+.input_textFrame {
+    position: relative;
+    top: 7vw;
+    left: 60vw;
+    width: 7vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vmin;
+}
+
+.input_name{
+    position: relative;
+    height: 5vh;
+    top: 10vh;
+    left: 58vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+
+}
+
+.comp_input_name{
+    position: relative;
+    height: 5vh;
+    top: 3vh;
+    left: 48vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+
+}
+
+.comp {
+    position: relative;
+    top: 15vh;
+    left: 1vw;
+    width: 200vw;
+    height: 10vh;
+    border-right: 0.1px solid #D9D9D9;
+}
+
+.cominput{
+    position: absolute;
+    top: 10vh;
+    left: 1vh;
+    width: 40vw;
+    height: 10vh;
+}
+
+.comptitle{
+    position: relative;
+    height: 15vh;
+    top: 0vh;
+    left: 0vw;
+    width: 15vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poiret One', cursive;
+    line-height: 10vh;
+    overflow: auto;
+    font-size: 5vmin;
+    border-bottom: 0.1px solid #D9D9D9;
+    color: #0084FF;
+}
+
+.compname{
+    position: relative;
+    height: 5vh;
+    top: 3vh;
+    left: 0vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+
+}
+
+.comp_textFrame {
+    position: relative;
+    top: 3vw;
+    left: 50vw;
+    width: 7vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vmin;
+}
+
+.comp_button {
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+    height: 6vh;
+    line-height: 6vh;
+    text-align: left;
+    width: 10vw;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5vmin;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+.comp_output_name {
+    position: relative;
+    height: 5vh;
+    top: 3vh;
+    left: 0vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+}
+
+.comp_output {
+    position: absolute;
+    top: 6vh;
+    left: 15vw;
+    width: 40vw;
+    height: 10vh;
+    margin: 0;
+    overflow: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vmin;
+}
+
+.comp_selector {
+    position: relative;
+    top: 0vh;
+    left: 120vh;
+    width: 5vw;
+    height: 5vh;
+}
+
+.comp_select {
+    position: relative;
+    height: 4vh;
+    top:  -5vh;
+    left: 10vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2vmin;
+}
+
+.comp_submit_button {
+    position: relative;
+    top: -9vh;
+    right: -20vw;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    width: 15vw;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5vmin;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+.textletter{
+    position: relative;
+    height: 5vh;
+    top: 3vh;
+    left: 0vw;
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5vmin;
+
 }
 
 .intro {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50vw;
+    width: 100vw;
     height: 50vh;
     margin: 0;
 }
 
 .intro_title {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 3vw;
     width: 47vw;
@@ -70,22 +248,22 @@ html, body {
 }
 
 .intro_para {
-    position: absolute;
+    position: relative;
     padding: 0 3vw;
     margin: 0;
-    top: 15vh;
+    top: 0vh;
     left: 0;
-    width: 44vw;
+    width: 100vw;
     height: 30vh;
     overflow: auto;
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5vmin;
+    font-size: 2vmin;
 }
 
 .selector {
     position: absolute;
-    top: 45vh;
-    left: 0;
+    top: 10vh;
+    right: 60vh;
     width: 50vw;
     height: 10vh;
 }
@@ -94,7 +272,7 @@ html, body {
     position: relative;
     height: 5vh;
     top: 2vh;
-    left: 3vw;
+    left: 5vw;
     width: 20vw;
     margin: 0;
     padding: 0;
@@ -104,28 +282,29 @@ html, body {
 
 .textInput {
     position: absolute;
-    top: 55vh;
-    left: 0;
-    width: 50vw;
-    height: 35vh;
+    top: 10vh;
+    left: 1vh;
+    width: 40vw;
+    height: 10vh;
 }
+
 
 .textFrame {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 44vw;
-    height: 25vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    top: 1vw;
+    left: 5vw;
+    width: 20vw;
+    height: 5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5vmin;
+    font-size: 1.5vmin;
 }
 
 .button {
     position: absolute;
-    top: 27vh;
-    left: 3vw;
+    top: 2vh;
+    right: -25vw;
     height: 5vh;
     line-height: 5vh;
     text-align: center;
